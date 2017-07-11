@@ -33,45 +33,10 @@ public class RoshamboApp {
             Roshambo computerSelection1 = player1.generateRoshambo();
             Roshambo computerSelection2 = player2.generateRoshambo();
 
-            if (playerChoice.equalsIgnoreCase("P1")) {
-                System.out.println("Player 1: " + computerSelection1);
-                System.out.println(userName + ": " + playerSelection);
+            Computer1(userName, playerChoice, playerSelection, computerSelection1);
 
-                if (playerSelection.equals(computerSelection1)) {
-                    System.out.println("Draw!");
-                } else if (playerSelection.toString().equalsIgnoreCase("Scissors")) {
-                    System.out.println(userName + " loses!");
-                } else if (playerSelection.toString().equalsIgnoreCase("Paper")) {
-                    System.out.println(userName + " wins!");
-                }
-            }
+            Computer2(userName, playerChoice, playerSelection, computerSelection2);
 
-            if (playerChoice.equalsIgnoreCase("P2")) {
-                System.out.println("Player 2: " + computerSelection2);
-                System.out.println(userName + ": " + playerSelection);
-
-                if (playerSelection.equals(computerSelection2)) {
-                    System.out.println("Draw!");
-                } else if (playerSelection.toString().equalsIgnoreCase("Scissors")) {
-                    if (computerSelection2.toString().equalsIgnoreCase("Rock")) {
-                        System.out.println(userName + " loses!");
-                    } else {
-                        System.out.println(userName + " wins!");
-                    }
-                } else if (playerSelection.toString().equalsIgnoreCase("Paper")) {
-                    if (computerSelection2.toString().equalsIgnoreCase("Rock")) {
-                        System.out.println(userName + " wins!");
-                    } else {
-                        System.out.println(userName + " loses!");
-                    }
-                } else if (playerSelection.toString().equalsIgnoreCase("Rock")) {
-                    if (computerSelection2.toString().equalsIgnoreCase("Scissors")) {
-                        System.out.println(userName + " wins!");
-                    } else {
-                        System.out.println(userName + " loses!");
-                    }
-                }
-            }
             System.out.println();
             System.out.print("Would you like to play again? Y/N: ");
             repeat = scnr.nextLine();
@@ -87,5 +52,49 @@ public class RoshamboApp {
         } while (repeat.equalsIgnoreCase("Y"));
 
         System.out.println("Goodbye");
+    }
+
+    private static void Computer2(String userName, String playerChoice, Roshambo playerSelection, Roshambo computerSelection2) {
+        if (playerChoice.equalsIgnoreCase("P2")) {
+            System.out.println("Player 2: " + computerSelection2);
+            System.out.println(userName + ": " + playerSelection);
+
+            if (playerSelection.equals(computerSelection2)) {
+                System.out.println("Draw!");
+            } else if (playerSelection.toString().equalsIgnoreCase("Scissors")) {
+                if (computerSelection2.toString().equalsIgnoreCase("Rock")) {
+                    System.out.println(userName + " loses!");
+                } else {
+                    System.out.println(userName + " wins!");
+                }
+            } else if (playerSelection.toString().equalsIgnoreCase("Paper")) {
+                if (computerSelection2.toString().equalsIgnoreCase("Rock")) {
+                    System.out.println(userName + " wins!");
+                } else {
+                    System.out.println(userName + " loses!");
+                }
+            } else if (playerSelection.toString().equalsIgnoreCase("Rock")) {
+                if (computerSelection2.toString().equalsIgnoreCase("Scissors")) {
+                    System.out.println(userName + " wins!");
+                } else {
+                    System.out.println(userName + " loses!");
+                }
+            }
+        }
+    }
+
+    private static void Computer1(String userName, String playerChoice, Roshambo playerSelection, Roshambo computerSelection1) {
+        if (playerChoice.equalsIgnoreCase("P1")) {
+            System.out.println("Player 1: " + computerSelection1);
+            System.out.println(userName + ": " + playerSelection);
+
+            if (playerSelection.equals(computerSelection1)) {
+                System.out.println("Draw!");
+            } else if (playerSelection.toString().equalsIgnoreCase("Scissors")) {
+                System.out.println(userName + " loses!");
+            } else if (playerSelection.toString().equalsIgnoreCase("Paper")) {
+                System.out.println(userName + " wins!");
+            }
+        }
     }
 }
