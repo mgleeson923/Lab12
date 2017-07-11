@@ -19,6 +19,11 @@ public class RoshamboApp {
         do {
             System.out.print("Who would you like to play against? Player 1, or Player 2? (P1/P2): ");
             String playerChoice = scnr.nextLine();
+            while (!playerChoice.equalsIgnoreCase("p1") && (!playerChoice.equalsIgnoreCase("p2"))) {
+                System.out.print("Invalid Input. Would you like to play against Player 1 or Player 2? P1/P2:  ");
+                playerChoice = scnr.nextLine();
+                System.out.println();
+            }
 
             ComputerPlayer1 player1 = new ComputerPlayer1();
             ComputerPlayer2 player2 = new ComputerPlayer2();
