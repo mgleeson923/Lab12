@@ -3,6 +3,8 @@ import java.util.Scanner;
 /**
  * Created by michaelgleeson on 7/10/17.
  */
+
+//Human Player class, subclass of Player. Produces a choice with validation
 public class HumanPlayer extends Player {
     Scanner scnr = new Scanner(System.in);
 

@@ -1,6 +1,7 @@
 /**
  * Created by michaelgleeson on 7/10/17.
  */
+//sublcass of Player, chooses Rock, Paper, Scissors randomly based on RNG
 public class ComputerPlayer2 extends Player {
 
     @Override
